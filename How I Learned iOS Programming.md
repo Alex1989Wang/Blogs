@@ -1,19 +1,22 @@
-Really, anyone can code. It's not that hard at all.
+# Before The Detailed Plan
 
-But, before you passionately embark on this journey. You gotta have a plan - no need to be detailed. But, by just showing you some basic steps and their corresponding due dates, you can largely assure yourself this will work. So, psychologically speaking, you set out to be a winner in the very beginning.
+Computer science as a subject may be elusive, but coding is not that hard at all.
+
+However, before you passionately embark on this journey. You gotta have a plan - no need to be detailed. But, by just showing you some basic steps and their corresponding due dates, you can largely assure yourself this will work out. So, psychologically speaking, you set out to be a winner in the very beginning.
 
 The next thing which is worthy of doing is to take a so-called "integrated learning" strategy. Let me elaborate on this a little bit. An integrated learning strategy is something I would also call a miscellaneous learning strategy. Well, the name tells it all - while you are learning, you have to make use of all the senses or mental capabilities that you have. See, while I was following one of the tutorials below to design apps, I don't just read those tutorials through and follow them exactly step by step. Sometimes, I read out loud sentence by sentence and mess with the code. Sometimes, I try to explain to me what those programming terminologies mean, however shallow my understanding is. Other times, I do nothing but sit there reconstructing the code in my mind. Before bedtime, I usually would try to recall how much I have learned today.
 
-As you might have realized this method is very efficient and can be used to learn things other than programming. If you want to streamline this strategy a bit and make it simple. The self-explaining process is something that should never be left out - when you can make others understand something, then that "somethingF" has definitely been truly conquered by you.
+As you might have realized this method is very efficient and can be used to learn things other than programming. If you want to streamline this strategy a bit and make it simple. The self-explaining process is something that should never be left out - when you can make others understand something, then that "something" has definitely been truly conquered by you.
 
 So, I mentioned I bought this Mac on February 27th. I spent half a day to download necessary apps and familiarize myself with this machine. And, then I began scavenging through the Internet on how to start iOS programming. I found two beautifully written articles, which inspired me. They are also easy-to-follow step-by-step tutorials. So, I paste the links here just to show my respect.
-
 
 
 https://www.zhihu.com/question/20919784
 https://www.zhihu.com/question/20264108
 
 Based on these two tutorials. I designed my own plan, which is originally written in Chinese. And I don't have any intention to rewrite this. So, I will just leave it be this way. This plan is not finalized yet and will constantly be adjusted and revised - simply because I haven't been through all the stages myself.
+
+# The Detailed Plan
 
 1. 入门阶段（阶段一：时长30Days）
 入门教材的选择：1. 一定要极易上手。也就是说自己在编程语言（Swift、OC）并不熟悉的情况下，仍然能够写出一个功能完整的App。2. 教程应该简洁地、清晰地在整个学习的过程中讲解了iOS编程的重要概念、编程语言的语法规则，能够让自己作为初学者也能够容易、正确地理解。
@@ -37,5 +40,6 @@ iOS Apprentice - Lesson Three ()
 阶段二这个部分主要是学习两个编程语言：Objective C和Swift，阶段一中所有的教程用的编程语言都是Swift，但是我们还是有必要去学习一下Objective C，毕竟Swift还是相对于Objective C来说是一门很新的语言。另外，在就业面试的过程中，Objective C的知识也是需要的。另外，在第一阶段留下来的实践内容，可以在这个阶段完全抛开教程的情况下，查看App设计要求，而去自主完成这个部分。
 
 3. 项目实践（阶段三：时长...）
-Find a fucking job.
+
+# The Detailed Plan Revised Version
 
