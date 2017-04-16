@@ -16,4 +16,4 @@ So, on February 27th, I bought my first Mac and was ready to take this wild pass
 After four month of teaching my self iOS progrmming skills, I got my first job as iOS programmer. Those four month are gruesome and demanding. But, every day it was like a new day for me and I felt like I relived again. As I was an engineering student and took some programming courses before, it didn't take me a lot of trouble to figure out a plan to acqire neccessary skills of iOS programming. 
 
 ## The End
-Now I have been programming roughly a year. I still know there is a lot to learn and feel passinate as if every day was the first day I decided to become a programmer.  
+Now I have been programming roughly a year. I still know there is a lot to learn and feel passionate as if every day was the first day I decided to become a programmer.  
