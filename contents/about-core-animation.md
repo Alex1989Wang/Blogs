@@ -13,8 +13,19 @@
 ### CALayer
 `UIView`实际上是在`CALayer`之上的一层thin wrapper。至少从Apple的文档看来，性能已经很好了；所以，也更加推荐尽量使用`UIView`及其子类来完成App视图层级的构建。另外，`UIView`本身还支持`Autolayout`，所以就更加值得使用过了。
 
-就`CALayer`本身，它是如果将我们动态的App内容渲染出来的。[文档](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreAnimation_guide/SettingUpLayerObjects/SettingUpLayerObjects.html#//apple_ref/doc/uid/TP40004514-CH13-SW4)也做了一些说明。简单的讲，也就是如果我们是使用`UIView`，渲染的过程是自动的（也就是我们并没有显式地赋值layer的`contents`属性）；而如果我们需要使用***独立的layer***，那就需要我们显式地给该layer指定内容。当然，需要区别是的这个内容，并不是指layer的背景颜色，边框。下图就能较好说明layer的内容是那个部分。
-![layer内容结构](../images/layer_breakdown.png)
+就`CALayer`本身，它是如果将我们动态的App内容渲染出来的。[文档](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreAnimation_guide/SettingUpLayerObjects/SettingUpLayerObjects.html#//apple_ref/doc/uid/TP40004514-CH13-SW4)也做了一些说明。简单的讲，也就是如果我们是使用`UIView`，渲染的过程是自动的（也就是我们并没有显式地赋值layer的`contents`属性）；而如果我们需要使用**独立的layer**，那就需要我们显式地给该layer指定内容。当然，需要区别是的这个内容，并不是指layer的背景颜色，边框。下图就能较好说明layer的内容是那个部分。
+
+<div align='center'>
+<img 
+src="../images/layer_breakdown.png" 
+width="400" 
+title = "layer内容结构"
+alt = "layer内容结构"
+align = center
+/>
+<br />
+<br />
+</div>
 
 也就是最终一个layer不管是静态地展示还是在动画过程中。它都是通过将自己的内容和其他附加属性合成为一张bitmap，绘制到屏幕上。
 
@@ -30,7 +41,7 @@ CALayer在开放的API中有两种不同的作用的layer（这里谈论的不�
     
 关于第二点需要做一些说明。一个独立的layer在被添加到一个已经有了一个默认layer的UIView对象上（该类视图被叫做`layer-backed view`）；如果改变这个独立layer的[可动画属性](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreAnimation_guide/AnimatableProperties/AnimatableProperties.html#//apple_ref/doc/uid/TP40004514-CH11-SW1)，那么这个属性的改变是自动会被动画的。想要禁止这个动画的出现需要使用`CATransaction`的方法。
 
-```OBJC
+```objc
 [CATransaction begin];
 [CATransaction setDisableActions:YES]; //如果去掉，就会看到动画效果
 animationLayer.backgroundColor = [UIColor blueColor].CGColor; //独立layer
@@ -51,11 +62,10 @@ animationLayer.backgroundColor = [UIColor blueColor].CGColor; //独立layer
 `CATransaction`的用途比较广泛，比如：
 - 在一个事务中，可以修改layer的多个属性，做统一的一次事务提交；
 - 事务可以嵌套`nested transactions`，它可以保证在不同的动画组中有不同的动画参数，互不隐藏。
-    ```OBJC
+    ```objc
     [CATransaction begin]; // Outer transaction
     // Change the animation duration to two seconds
-    [CATransaction setValue:[NSNumber numberWithFloat:2.0f]
-    		     forKey:kCATransactionAnimationDuration];
+    [CATransaction setValue:[NSNumber numberWithFloat:2.0f] forKey:kCATransactionAnimationDuration];
     // Move the layer to a new position
     theLayer.position = CGPointMake(0.0,0.0);
     [CATransaction begin]; // Inner transaction
@@ -69,10 +79,9 @@ animationLayer.backgroundColor = [UIColor blueColor].CGColor; //独立layer
     [CATransaction commit]; // Outer transaction
     ```
 - 可以利用事务修改隐式动画的参数。
-    ```OBJC
+    ```objc
     [CATransaction begin];
-    [CATransaction setValue:[NSNumber numberWithFloat:10.0f]
-    forKey:kCATransactionAnimationDuration];
+    [CATransaction setValue:[NSNumber numberWithFloat:10.0f] forKey:kCATransactionAnimationDuration];
     // Perform the animations
     [CATransaction commit];
     ```
