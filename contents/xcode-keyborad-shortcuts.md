@@ -85,3 +85,8 @@ align = center
 
 自定义快捷键行为在XCode的`Preference`设置中，按下`CMD + ,`就可以触发偏好设置。如上图所示，在`Behaviors`一栏添加你想要的自定义XCode行为就好了。
 
+## 如果你喜欢Vim
+
+我自己在使用XCode的过程中是使用了[XVim](https://github.com/XVimProject/XVim)插件的。在代码编辑的速度上面有了很大提升。以至于在后来很多场合下能够用`Vim`的地方就离不开它。`Vim`有很多插件，在写这篇`Markdown`文档的时候也用了`Vim`进行的编辑。<br/>
+关于`Vim`的学习资料很多，自带的`Vim tutor`就是一个很好入手的地方。台湾前辈Edward Lee写过一个很好的教程：[大家来学Vim](http://www.study-area.org/tips/vim/)。<br/>
+关键在于每天的积累，慢慢就很快了。
