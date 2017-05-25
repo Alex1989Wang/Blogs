@@ -1,7 +1,7 @@
 # Hit Test和响应者链条
 
-iOS应用定义了多种[事件]()，简单的分类有三种：
-- Touch Events 触摸事件
+iOS应用定义了多种[事件](https://developer.apple.com/library/content/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/)，简单的分类有三种：
+- MultiTouch Events 多点触摸事件
 - Motion Events 设备加速器、陀螺仪检测到的运动事件
 - Remote Control Events 比如蓝牙耳机等对设备的控制
 
