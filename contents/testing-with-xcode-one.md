@@ -17,7 +17,7 @@
 <div align='center'>
 <img 
 src="../images/test_navigatior.png" 
-width="400" 
+width="250" 
 title = "测试导航栏内容结构"
 alt = "测试导航栏内容结构"
 align = center
