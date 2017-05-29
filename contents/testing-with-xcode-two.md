@@ -10,7 +10,7 @@
 
 [上篇](contents/testing-with-xcode-one.md)中，已经介绍了测试方法的写法。在这里就将其运简单地用于实践。
 
-[测试示例](https://github.com/Alex1989Wang/Demos/tree/master/DemoProjects/XCTestDemo)是一个非常简单的工程。使用了[Github 公开的API]()，根据`Github`用户名来查询该用户是否存在。如存在，则显示该用户的信息。
+[测试示例](https://github.com/Alex1989Wang/Demos/tree/master/DemoProjects/XCTestDemo)是一个非常简单的工程。使用了[Github 公开的API](https://api.github.com/users)，根据`Github`用户名来查询该用户是否存在。如存在，则显示该用户的信息。
 
 ### `XCTest`同步测试特性
 
@@ -64,7 +64,7 @@
 
 <div align='center'>
 <img
-src = "images/test_result_editor.png"
+src = "../images/test_result_editor.png"
 title = "测试代码编辑区结果显示"
 alt = "测试代码编辑区结果显示"
 width = "400"
@@ -76,7 +76,7 @@ align = "center"
 
 <div align='center'>
 <img
-src = "images/test_result_navigator.png"
+src = "../images/test_result_navigator.png"
 title = "report navigator结果显示"
 alt = "report navigator结果显示"
 width = "400"
