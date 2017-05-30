@@ -67,7 +67,7 @@
 src = "../images/test_result_editor.png"
 title = "测试代码编辑区结果显示"
 alt = "测试代码编辑区结果显示"
-width = "400"
+width = "500"
 align = "center"
 />
 </div>
@@ -79,7 +79,7 @@ align = "center"
 src = "../images/test_result_navigator.png"
 title = "report navigator结果显示"
 alt = "report navigator结果显示"
-width = "400"
+width = "600"
 align = "center"
 />
 </div>
@@ -123,6 +123,50 @@ align = "center"
 所以，其原理就是在利用同步的机制，在超时值或者是该`expectation`达到了之后，`handler`会被调用。测试才完成。
 
 ### `XCTest`性能测试特性
+
+性能测试就是将一个`code block`执行10次，收集该次测试的平均时间和标准方差。该次测试获得的这两个值就会和设定的基线值（`baseline value`）进行比较，以此得出测试是通过还是失败。
+
+该基线值是通过测试的需求来设定的。通常情况下，可以以第一次的测试结果值作为之后测试的基线值，或者在此之上进行调整得到基线值。
+
+在[示例工程](https://github.com/Alex1989Wang/Demos/tree/master/DemoProjects/XCTestDemo)中，文件`XCTestDemoPerformanceTest.m`简单地就性能测试进行了示例。该测试的主要内容是对网络数据的序列化过程做了性能测试。
+
+```objc
+- (void)testJsonSerializationPerformance {
+     NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+     NSString *userInfoFile = [testBundle pathForResource:@"Alex1989Wang" ofType:@".plist"];
+     NSData *fileData = [NSData dataWithContentsOfFile:userInfoFile];
+
+     XCTAssertNotNil(fileData, @"should not be nil");
+     [self measureBlock:^{
+     	DemoUser *me = [[DemoUser alloc] initWithUserInfoData:fileData];
+     }];
+}
+```
+为了排除网络数据请求对该测试的干扰，在测试bundle中添加了一个本地`plist`数据文件。该文件的主要作用就是提供一套共测试的本地数据。需要在性能上测试的关键代码（`critical selection`）实际上是写在```measureBlock:```中的代码。其作用是将网络请求会的数据（***测试用的是本地模拟***）先序列化然后转化为模型对象。
+
+在首次运行测试时，并不具备性能测试的`baseline value`，按照[官方文档](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html)的说法：
+
+> Performance measuring tests always report failure on the first run and until a baseline value is set on a particular device configuration.
+
+也就是在第一次进行性能测试时，获得的结果都是失败。同时每一个基线值都是跟一个特定的设备配置绑定的。这个很好理解，因为每代产品的硬件性能都不一样，所以当然性能测试的基线值需要设置不同；也就是，对于硬件性能高的设备来讲，可以将基线值设置的更加严苛。
+
+<div align='center'>
+<img
+src = "../images/test_set_baseline.png"
+title = "设置测试参考基线值"
+alt = "设置测试参考基线值"
+width = "500"
+align = "center"
+/>
+</div>
+
+点击该性能测试方法左边侧栏就能够弹出设置测试参考基线值弹窗。设置基线值的过程比较简单。
+
+[WWDC 2014 - Testing in XCode 6](https://developer.apple.com/videos/play/wwdc2014/414/) 中对于性能测试通过还是失败的判断标准有较详细的解读。
+
+- 在设定`baseline value`的条件下，如果该次测试平均用时大于10%的基线值，那么就认为测试未通过。需要注意的是，如果该次测试的平均用时是小于0.1s的，就会直接被忽略，也就是测试无条件通过。
+- 如果该次测试的十次测试值的标准方差大于10%（此10%的标准可以调整），那么测试就未通过。
+
 
 ## 参考资料
 
