@@ -161,3 +161,17 @@ static double val[MAXVAL];
 当然，在一个函数的内部，也可以声明局部变量为静态变量。这个意义是有两层的：
 - 该局部变量在内存表现上成为了静态变量。为保留修改值。
 - 其可见范围为定义的这个块范围中（由于本身就是局部变量，所以这个并没有改变什么）。
+
+## 关于`storage class`
+
+关于这个讨论，有另外一个专业术语叫做`storage class`。下面是摘自[The C Programming Language](https://github.com/Alex1989Wang/Demos/blob/master/Books/Brian%20W.%20Kernighan%2C%20Dennis%20M.%20Ritchie-C%20Programming%20Language%20-Prentice%20Hall%20(1988).pdf)的引文。有兴趣可以去查阅一下。
+
+> An object, sometimes called a variable, is a location in storage, and its interpretation depends on two main attributes: its storage class and its type. The storage class determines the lifetime of the storage associated with the identified object; the type determines the meaning of the values found in the identified object. A name also has a scope, which is the region of the program in which it is known, and a linkage, which determines whether the same name in another scope refers to the same object or function. Scope and linkage are discussed in Par.A.11. <br>
+>
+> A.4.1 Storage Class <br>
+> There are two storage classes: automatic and static. Several keywords, together with the context of an object's declaration, specify its storage class. Automatic objects are local to a block (Par.9.3), and are discarded on exit from the block. Declarations within a block create automatic objects if no storage class specification is mentioned, or if the auto specifier is used. Objects declared register are automatic, and are (if possible) stored in fast registers of the machine.
+> Static objects may be local to a block or external to all blocks, but in either case retain their values across exit from and reentry to functions and blocks. Within a block, including a block that provides the code for a function, static objects are declared with the keyword static. The objects declared outside all blocks, at the same level as function definitions, are always static. They may be made local to a particular translation unit by use of the static keyword; this gives them internal linkage. They become global to an entire program by omitting an explicit storage class, or by using the keyword extern; this gives them external linkage.
+
+## 参考资料
+- [The C Programmign Language - chapter 4 section 3](https://github.com/Alex1989Wang/Demos/blob/master/Books/Brian%20W.%20Kernighan%2C%20Dennis%20M.%20Ritchie-C%20Programming%20Language%20-Prentice%20Hall%20(1988).pdf)
+- [Stackoverflow discussion](https://stackoverflow.com/questions/11055802/static-and-extern-global-variables-in-c-and-c)
