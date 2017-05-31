@@ -2,7 +2,7 @@
 
 在上篇中我们简单介绍[使用XCode对工程代码进行测试的基础知识](../contents/testing-with-xcode-one.md)。
 
-还有许多内容并没有在上篇中提到，为的能够给大家简单地介绍使用`XCode`测试的基本使用和流程。在这一篇中，将基于一个简单的[示例项目](https://github.com/Alex1989Wang/Demos/tree/master/DemoProjects/XCTestDemo)来演示测试过程，同时进一步介绍`XCTest`中的性能测试和对异步功能函数的测试。至于`UITesting`这个内容，准备在[下一篇](contents/testing-with-xcode-three.md)进行介绍。
+还有许多内容并没有在上篇中提到，为的能够给大家简单地介绍使用`XCode`测试的基本使用和流程。在这一篇中，将基于一个简单的[示例项目](https://github.com/Alex1989Wang/Demos/tree/master/DemoProjects/XCTestDemo)来演示测试过程，同时进一步介绍`XCTest`中的性能测试和对异步功能函数的测试。~~至于`UITesting`这个内容，准备在[下一篇](contents/testing-with-xcode-three.md)进行介绍。~~
 
 ## 测试示例
 
@@ -47,7 +47,7 @@
 ```
 方法```- (void)setUP```和```- (void)tearDown```在[上篇](contents/testing-with-xcode-one.md)中提到过，是用来创建测试多个测试方法需要的共同资源和销毁这些共同资源。可以按需使用。
 
-实际上，对于上面的该测试。完全可以不适用这两个方法。而将`searchController`的创建放在测试方法中。如：
+实际上，对于上面的该测试。完全可以不使用这两个方法。而将`searchController`的创建放在测试方法中。如：
 
 ```objc
 - (void)testViewHierachyLazilyLoaded {
@@ -86,7 +86,7 @@ align = "center"
 
 ### `XCTest`异步测试特性
 
-由于工程中，一般都会有很多异步逻辑。所以，对于主要的异步逻辑的测试也是必不可少的。`XCTest`中提供了对了异步逻辑的测试。异步逻辑测试方法的执行和同步逻辑测试方法的执行没有太多的区别。
+由于工程中，一般都会有很多异步逻辑。所以，对于主要的异步逻辑的测试也是必不可少的。`XCTest`中提供了对于异步逻辑的测试。异步逻辑测试方法的执行和同步逻辑测试方法的执行没有太多的区别。
 
 主要区别在于，对于异步逻辑的测试，需要等待异步逻辑完成之后，再对该异步的结果进行相应的测试。同时，对该异步过程，需要设置一个超时值，超过超时值还没有能够得到测试结果会被认为测试失败。
 
@@ -112,7 +112,7 @@ align = "center"
 
 在上篇中，已经介绍过一个`test case`的执行原理：在执行某个测试方法时，是首先实例化一个该方法所属的`test class`的实例，然后依次调用相关方法进行测试。那么，如果了解测试方法执行流程，就能够理解上面的异步测试原理。
 
-异步测试需要在`XCTestExpectation`参与进来。一个`XCTestExpectation`的实例描述了一个测试需要达到的期望。使用`XCTestCase`提供的实例方法```- (XCTestExpectation *)expectationWithDescription:```，在进行异步测试之前设定一个或者***多个***需要测试满足的期望。因为，前面刚提到每个测试方法都会单独实例化一个`tese class`的实例来执行；所以不同担心，不同的测试方法之前会相互等待不同的`XCTestExpectation`。
+异步测试需要`XCTestExpectation`参与进来。一个`XCTestExpectation`的实例描述了一个测试需要达到的期望。使用`XCTestCase`提供的实例方法```- (XCTestExpectation *)expectationWithDescription:```，在进行异步测试之前设定一个或者***多个***需要测试满足的期望。因为，前面刚提到每个测试方法都会单独实例化一个`tese class`的实例来执行；所以不同担心，不同的测试方法之前会相互等待不同的`XCTestExpectation`。
 
 在异步测试过程中，还需要注意的是一定要设置`expectation`的超时值。当测试代码执行到```- (void)waitForExpectationsWithTimeout: handler:```的时候会等待。官方的说法为：
 
@@ -142,7 +142,7 @@ align = "center"
      }];
 }
 ```
-为了排除网络数据请求对该测试的干扰，在测试bundle中添加了一个本地`plist`数据文件。该文件的主要作用就是提供一套共测试的本地数据。需要在性能上测试的关键代码（`critical selection`）实际上是写在```measureBlock:```中的代码。其作用是将网络请求会的数据（***测试用的是本地模拟***）先序列化然后转化为模型对象。
+为了排除网络数据请求对该测试的干扰，在测试bundle中添加了一个本地`plist`数据文件。该文件的主要作用就是提供一套供测试的本地数据。需要在性能上测试的关键代码（`critical selection`）实际上是写在```measureBlock:```中的代码。其作用是将网络请求回的数据（***测试用的是本地模拟***）先序列化然后转化为模型对象。
 
 在首次运行测试时，并不具备性能测试的`baseline value`，按照[官方文档](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html)的说法：
 
