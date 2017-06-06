@@ -2,6 +2,7 @@
 Some of the blog posts transferred from my old personal home page.
 
 # Contents
+## [Objective-C Runtime 基础](contents/runtime-programming-guide-reading-notes-one.md)
 ## [使用XCode测试工程代码（二）](contents/testing-with-xcode-two.md)
 ## [使用XCode测试工程代码（一）](contents/testing-with-xcode-one.md)
 ## [Hit Test和响应者链条](contents/hittest-and-responder-chain.md)
