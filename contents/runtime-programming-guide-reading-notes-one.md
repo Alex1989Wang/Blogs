@@ -96,7 +96,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 ## 代码示例
 
-[示例项目]简单地实践了动态提供方法实现（`+ (BOOL)resolveInstanceMethod:`）、快速消息转发和普通消息转发。
+[示例项目](https://github.com/Alex1989Wang/Demos/tree/master/DemoProjects/OCRuntimeDemo)简单地实践了动态提供方法实现（`+ (BOOL)resolveInstanceMethod:`）、快速消息转发和普通消息转发。
 
 `Gift`类本身并没有实现任何的`priceInUSD`这个方法。
 
@@ -146,4 +146,4 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 ## 参考资料
 
 - [Runtime Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html)
-- [Method Reference]()
+- [Method Reference](https://developer.apple.com/documentation/objectivec/nsobject/1571955-forwardinvocation)
