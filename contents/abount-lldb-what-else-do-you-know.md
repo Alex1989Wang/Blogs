@@ -82,15 +82,16 @@ Current command abbreviations (type 'help command alias' for more info):
 
 绝大部分时候，都是通过`XCode`间接地使用`LLDB`的调试功能。理解如何独立使用`LLDB`调试程序的流程，也能更好地理解在`XCode`中调试程序的技巧。
 
-大体上，使用`LLDB`可以分为下面几个步骤（不一定具有先后顺序）：
+大体上，使用`LLDB`可以分为下面几个步骤（大致有先后顺序）：
 
 - 确定调试的程序
 - 设置调试断点
-- 
+- 控制程序运行
+- 输出线程和`stack frame`信息
 
 ## 参考资料
 
 - [LLDB Quick Start Guide](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/Introduction.html)
 - [LLDB Debugging Guide](https://developer.apple.com/library/content/documentation/General/Conceptual/lldb-guide/chapters/Introduction.html)
-- [Advanced Debugging with LLDB - WWDC]()
-- [The LLDB Debugger]()
+- [Advanced Debugging with LLDB - WWDC](https://developer.apple.com/videos/play/wwdc2013/413/)
+- [The LLDB Debugger](https://lldb.llvm.org/)

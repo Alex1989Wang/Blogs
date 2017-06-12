@@ -2,6 +2,9 @@
 Some of the blog posts transferred from my old personal home page.
 
 # Contents
+## [LLDB命令使用](contents/abount-lldb-what-else-do-you-know.md)
+出了在`XCode`的调试控制台（`debugging console`）使用`po`，对于`lldb`还需要知道些什么？
+
 ## [Objective-C Runtime 基础](contents/runtime-programming-guide-reading-notes-one.md)
 什么是`OC`的动态特性？动态绑定？消息发送机制？
 
