@@ -88,7 +88,124 @@ Current command abbreviations (type 'help command alias' for more info):
 - 确定调试的程序
 - 设置调试断点
 - 控制程序运行
-- 输出线程和`stack frame`信息
+- 输出线程和`stack frame`信息。
+
+在这里将[文档](https://developer.apple.com/library/content/documentation/General/Conceptual/lldb-guide/chapters/C1-Introduction-to-Debugging.html#//apple_ref/doc/uid/TP40016717-CH6-SW1)实例照搬至此。
+
+假设有一下的一个名为`Greeter.swift`的文件：
+
+```swift
+class Greeter {
+    private var acquaintances: Set<String> = []
+
+    func hasMet(personNamed name: String) -> Bool {
+	return acquaintances.contains(name)
+    }
+
+    func greet(personNamed name: String) {
+	if hasMet(personNamed: name) {
+	    print("Hello again, \(name)!")
+	} else {
+	    acquaintances.insert(name)
+	    print("Hello, \(name). Nice to meet you!")
+	}
+    }
+}
+
+let greeter = Greeter() 
+greeter.greet(personNamed: "Anton")
+greeter.greet(personNamed: "Mei")
+greeter.greet(personNamed: "Anton")
+```
+在使用`swiftc`命令编译之后会产生一个名为`Greeter`的可执行文件：
+```cmd
+$ swiftc -g Greeter.swift
+$ ls
+Greeter.dSYM
+Greeter.swift
+Greeter*
+```
+#### 确定调试程序
+
+首先，使用`lldb`来启动程序。
+
+```cmd
+$ lldb Greeter
+(lldb) target create "Greeter"
+Current executable set to 'Greeter' (x86_64).
+```
+
+该命令就会进入`lldb`的调试`session`，能够让你输入不同的`lldb`命令与被调试的程序交互。
+
+#### 设置调试断点
+
+在确定了调试的程序之后，通常需要设置调试断点。断点一般设置在自己需要特别关心的代码块上。
+
+```cmd
+(lldb) breakpoint set --line 18
+Breakpoint 1: where = Greeter`main + 70 at Greeter.swift:18, address = 0x0000000100001996
+```
+
+#### 运行程序
+
+使用`process launch`来运行需要调试的程序。前面`lldb <program>`只是开启了针对`program`的调试session，并没有启动被调试的程序进程。
+
+```cmd
+(lldb) process launch
+Process 97209 launched: 'Greeter' (x86_64)
+Process 97209 stopped
+* thread #1: tid = 0x1288be3, 0x0000000100001996 Greeter`main + 70 at Greeter.swift:18, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+frame #0: 0x0000000100001996 Greeter`main + 70 at Greeter.swift:18
+15          }
+16      }
+18
+-> 18      let greeter = Greeter()
+19
+20      greeter.greet(personNamed: "Anton")
+21      greeter.greet(personNamed: "Mei")
+```
+#### 控制程序运行
+
+使用`thread step-over`跳过断点出的函数调用直接到下一个函数调用。
+
+```cmd
+(lldb) thread step-over
+Process 97209 stopped
+* thread #1: tid = 0x1288be3, 0x00000001000019bd Greeter`main + 109 at Greeter.swift:20, queue = 'com.apple.main-thread', stop reason = step over
+  frame #0: 0x00000001000019bd Greeter`main + 109 at Greeter.swift:20
+  17
+  18      let greeter = Greeter()
+  19
+  -> 20      greeter.greet(personNamed: "Anton")
+  21      greeter.greet(personNamed: "Mei")
+  22      greeter.greet(personNamed: "Anton")
+```
+
+使用`thread step-in`可以进入函数内部。
+
+#### 输出信息
+
+使用`thread backtrace`输出程序执行至目前断点处之前的`栈帧`顺序。
+
+```cmd
+(lldb) thread backtrace
+* thread #1: tid = 0x1288be3, 0x0000000100001a98 Greeter`Greeter.hasMet(name="Anton", self=0x0000000101200190) -> Bool + 24 at Greeter.swift:5, queue = 'com.apple.main-thread', stop reason = step in
+   frame #0: 0x0000000100001a98 Greeter`Greeter.hasMet(name="Anton", self=0x0000000101200190) -> Bool + 24 at Greeter.swift:5
+   * frame #1: 0x0000000100001be4 Greeter`Greeter.greet(name="Anton", self=0x0000000101200190) -> () + 84 at Greeter.swift:9
+   frame #2: 0x00000001000019eb Greeter`main + 155 at Greeter.swift:20
+   frame #3: 0x00007fff949d05ad libdyld.dylib`start + 1
+   frame #4: 0x00007fff949d05ad libdyld.dylib`start + 1
+```
+
+使用`frame variable`输出当前栈帧上的所有变量。
+
+```cmd
+(lldb) frame variable
+(String) name = "Anton"
+(Greeter.Greeter) self = 0x0000000100502920 {
+acquaintances = ([0] = "Anton")
+}
+```
 
 ## 参考资料
 
