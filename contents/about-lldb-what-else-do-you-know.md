@@ -166,7 +166,7 @@ frame #0: 0x0000000100001996 Greeter`main + 70 at Greeter.swift:18
 ```
 #### 控制程序运行
 
-使用`thread step-over`跳过断点出的函数调用直接到下一个函数调用。
+使用`thread step-over`跳过断点所在行，调至下一行。
 
 ```cmd
 (lldb) thread step-over
@@ -181,7 +181,7 @@ Process 97209 stopped
   22      greeter.greet(personNamed: "Anton")
 ```
 
-使用`thread step-in`可以进入函数内部。
+使用`thread step-in`，如果断点在函数（或者方法）处，可以进入函数（或者方法）内部；如果不在，其效果跟`thread step-over`一样。
 
 #### 输出信息
 
