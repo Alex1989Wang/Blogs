@@ -92,7 +92,7 @@ align = center
 <div align='center'>
 <img 
 src="../images/lldb-xcode-gui-controls.png" 
-width="600" 
+width="400" 
 title = "LLDB XCode Console GUI Controls"
 alt = "LLDB XCode Console GUI Controls"
 align = center
