@@ -1,4 +1,4 @@
-# LLDB 常用命令
+# LLDB 常用命令补充
 
 在[上篇](about-lldb-what-else-do-you-know.md)中，简单介绍了`lldb`命令的基本使用和调试流程。在每个调试流程中有一系列的命令，在这篇中主要介绍常用的命令。
 

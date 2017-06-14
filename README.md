@@ -2,7 +2,10 @@
 Some of the blog posts transferred from my old personal home page.
 
 # Contents
-## [LLDB命令使用](contents/about-lldb-what-else-do-you-know.md)
+## [LLDB命令补充](contents/about-lldb-what-else-do-you-know-two.md)
+对上篇[LLDB命令基本使用](contents/about-lldb-what-else-do-you-know.md)常用命令的分类补充。
+
+## [LLDB命令基本使用](contents/about-lldb-what-else-do-you-know.md)
 除了在`XCode`的调试控制台（`debugging console`）使用`po`，对于`lldb`还需要知道些什么？
 
 ## [Objective-C Runtime 基础](contents/runtime-programming-guide-reading-notes-one.md)
