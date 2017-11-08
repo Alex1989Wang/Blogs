@@ -1,7 +1,11 @@
 # Blogs
 Some of the blog posts transferred from my old personal home page.
+Fore more posts, visit my [personal blog site](http://www.awsomejiang.com/)
 
 # Contents
+## [Design Alert Views](contents/2017-09-27-design-roubust-alert-views.md)
+如何给`App`设计一套弹窗系统。
+
 ## [LLDB命令补充](contents/about-lldb-what-else-do-you-know-two.md)
 对上篇[LLDB命令基本使用](contents/about-lldb-what-else-do-you-know.md)常用命令的分类补充。
 
