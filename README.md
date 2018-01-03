@@ -3,6 +3,12 @@ Some of the blog posts transferred from my old personal home page.
 Fore more posts, visit my [personal blog site](http://www.awsomejiang.com/)
 
 # Contents
+## [视图控制器转换(二) View Controller Transistion - No.2](http://www.awsomejiang.com/2018/01/01/custmize-navigation-controller-transition-animations/)
+介绍了自定义交互类型转场动画的原理，同时用demo展示了实现自定义`navigation transition`效果的实现过程。
+
+## [视图控制器转换(一) View Controller Transistion - No.1](http://www.awsomejiang.com/2017/12/25/View-Controller-Transistion-customizing-presentation-md/)
+介绍了自定义转场动画的原理，同时用demo展示了实现自定义`presentation`效果的实现过程。
+
 ## [Design Alert Views](contents/2017-09-27-design-roubust-alert-views.md)
 如何给`App`设计一套弹窗系统。
 
