@@ -3,6 +3,9 @@ Some of the blog posts transferred from my old personal home page.
 Fore more posts, visit my [personal blog site](http://www.awsomejiang.com/)
 
 # Contents
+## [iOS应用的内存管理（一)](http://www.awsomejiang.com/2018/01/14/Memory-Management-for-iOS-Apps/)
+主要介绍了`retain count`的基础和`MRR`下的内容管理规则和实践。
+
 ## [视图控制器转换(二) View Controller Transistion - No.2](http://www.awsomejiang.com/2018/01/01/custmize-navigation-controller-transition-animations/)
 介绍了自定义交互类型转场动画的原理，同时用demo展示了实现自定义`navigation transition`效果的实现过程。
 
