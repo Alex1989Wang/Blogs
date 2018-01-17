@@ -3,6 +3,9 @@ Some of the blog posts transferred from my old personal home page.
 Fore more posts, visit my [personal blog site](http://www.awsomejiang.com/)
 
 # Contents
+## [iOS应用的内存管理（二)](http://www.awsomejiang.com/2018/01/15/Memory-Management-For-iOS-Apps-No-2/)
+iOS平台上的`virtual memory`机制和基本概念。
+
 ## [iOS应用的内存管理（一)](http://www.awsomejiang.com/2018/01/14/Memory-Management-for-iOS-Apps/)
 主要介绍了`retain count`的基础和`MRR`下的内容管理规则和实践。
 
