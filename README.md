@@ -1,6 +1,5 @@
 # Blogs
-Some of the blog posts transferred from my old personal home page.
-Fore more posts, visit my [personal blog site](http://www.awsomejiang.com/)
+For more posts, visit my [personal blog site](http://www.awsomejiang.com/)
 
 # Contents
 
