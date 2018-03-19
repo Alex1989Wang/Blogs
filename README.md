@@ -3,6 +3,10 @@ Some of the blog posts transferred from my old personal home page.
 Fore more posts, visit my [personal blog site](http://www.awsomejiang.com/)
 
 # Contents
+
+## [Core Animation动画的不同阶段](http://www.awsomejiang.com/2018/03/06/about-core-animtion-animation-stages/)
+了解动画的不同阶段，更加深入地理解runloop和CoreAnimation的关系；另外，动画的不同阶段cpu usage能够直到动画性能的调优。
+
 ## [iOS应用的内存管理（二)](http://www.awsomejiang.com/2018/01/15/Memory-Management-For-iOS-Apps-No-2/)
 iOS平台上的`virtual memory`机制和基本概念。
 
