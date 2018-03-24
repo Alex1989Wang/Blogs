@@ -3,6 +3,9 @@ For more posts, visit my [personal blog site](http://www.awsomejiang.com/)
 
 # Contents
 
+## [Design Waving Effect Of High Performance](http://www.awsomejiang.com/2018/03/20/Highly-perfomant-Waving-Effect/)
+Some comparisons and measurements carried out between timer-driven waving animation and CAReplicatorLayer-based animation are laid out.
+
 ## [Core Animation动画的不同阶段](http://www.awsomejiang.com/2018/03/06/about-core-animtion-animation-stages/)
 了解动画的不同阶段，更加深入地理解runloop和CoreAnimation的关系；另外，动画的不同阶段cpu usage能够直到动画性能的调优。
 
