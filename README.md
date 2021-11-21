@@ -1,5 +1,7 @@
 # Blogs
-For more posts, visit my [personal blog site](http://www.awsomejiang.com/)
+For more posts, visit my [personal blog site](http://awesomejiang.cn/)
+
+See my [profile](https://github.com/Alex1989Wang/alex1989wang.github.io/blob/master/about.markdown)
 
 # Contents
 
