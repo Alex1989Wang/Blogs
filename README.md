@@ -5,25 +5,25 @@ The popular open source PromiseKit has an elegant design and it’s easy to get 
 
 Let's see how we can build it. Or how we can mock it, to be more correct.
 
-## [Infinite Scrolling and the Tiling Logic](http://www.awsomejiang.com/2018/03/24/Infinite-Scrolling-and-the-Tiling-Logic/)
+## [Infinite Scrolling and the Tiling Logic](http://awesomejiang.cn/english/2018/03/24/Infinite-Scrolling-and-the-Tiling-Logic.html)
 Sometimes, your app’s UX designer wants a infinite scroll for one of your collection views when the data displayed is limited. When a user scrolls to the very end of the data set, the first piece of data reappears on screen; if the use scrolls the other way, the last piece of data reappears.Traditionally, the solution for an infinite UICollectionView is to have a large duplicated data set (for example, 1000 * original data set) to trick the user into believing the collection view is infinite. This post explains how tiling can be used to make a infinitely-scrolling scroll view and a similar approach can be applied to collection view to achieve the same result. 
 
-## [Design Waving Effect Of High Performance](http://www.awsomejiang.com/2018/03/20/Highly-perfomant-Waving-Effect/)
+## [Design Waving Effect Of High Performance](http://www.awsomejiang.cn/2018/03/20/Highly-perfomant-Waving-Effect/)
 Some comparisons and measurements carried out between timer-driven waving animation and CAReplicatorLayer-based animation are laid out.
 
-## [Core Animation动画的不同阶段](http://www.awsomejiang.com/2018/03/06/about-core-animtion-animation-stages/)
+## [Core Animation动画的不同阶段](http://www.awsomejiang.cn/2018/03/06/about-core-animtion-animation-stages/)
 了解动画的不同阶段，更加深入地理解runloop和CoreAnimation的关系；另外，动画的不同阶段cpu usage能够直到动画性能的调优。
 
-## [iOS应用的内存管理（二)](http://www.awsomejiang.com/2018/01/15/Memory-Management-For-iOS-Apps-No-2/)
+## [iOS应用的内存管理（二)](http://www.awsomejiang.cn/2018/01/15/Memory-Management-For-iOS-Apps-No-2/)
 iOS平台上的`virtual memory`机制和基本概念。
 
-## [iOS应用的内存管理（一)](http://www.awsomejiang.com/2018/01/14/Memory-Management-for-iOS-Apps/)
+## [iOS应用的内存管理（一)](http://www.awsomejiang.cn/2018/01/14/Memory-Management-for-iOS-Apps/)
 主要介绍了`retain count`的基础和`MRR`下的内容管理规则和实践。
 
-## [视图控制器转换(二) View Controller Transistion - No.2](http://www.awsomejiang.com/2018/01/01/custmize-navigation-controller-transition-animations/)
+## [视图控制器转换(二) View Controller Transistion - No.2](http://www.awsomejiang.cn/2018/01/01/custmize-navigation-controller-transition-animations/)
 介绍了自定义交互类型转场动画的原理，同时用demo展示了实现自定义`navigation transition`效果的实现过程。
 
-## [视图控制器转换(一) View Controller Transistion - No.1](http://www.awsomejiang.com/2017/12/25/View-Controller-Transistion-customizing-presentation-md/)
+## [视图控制器转换(一) View Controller Transistion - No.1](http://www.awsomejiang.cn/2017/12/25/View-Controller-Transistion-customizing-presentation-md/)
 介绍了自定义转场动画的原理，同时用demo展示了实现自定义`presentation`效果的实现过程。
 
 ## [Design Alert Views](contents/2017-09-27-design-roubust-alert-views.md)
