@@ -1,8 +1,3 @@
-# Blogs
-For more posts, visit my [personal blog site](http://awesomejiang.cn/)
-
-See my [profile](https://github.com/Alex1989Wang/alex1989wang.github.io/blob/master/about.markdown)
-
 # Contents
 
 ## [Infinite Scrolling and the Tiling Logic](http://www.awsomejiang.com/2018/03/24/Infinite-Scrolling-and-the-Tiling-Logic/)
