@@ -1,5 +1,10 @@
 # Contents
 
+## [Make Your Own Promises](https://github.com/Alex1989Wang/Blogs/blob/master/contents/make-your-own-promise.md)
+The popular open source PromiseKit has an elegant design and it’s easy to get your hands on. There is of course no need to reinvent the wheel. But, in order to know the inner workings of the PromiseKit, we’d better make a PromiseKit of our own.
+
+Let's see how we can build it. Or how we can mock it, to be more correct.
+
 ## [Infinite Scrolling and the Tiling Logic](http://www.awsomejiang.com/2018/03/24/Infinite-Scrolling-and-the-Tiling-Logic/)
 Sometimes, your app’s UX designer wants a infinite scroll for one of your collection views when the data displayed is limited. When a user scrolls to the very end of the data set, the first piece of data reappears on screen; if the use scrolls the other way, the last piece of data reappears.Traditionally, the solution for an infinite UICollectionView is to have a large duplicated data set (for example, 1000 * original data set) to trick the user into believing the collection view is infinite. This post explains how tiling can be used to make a infinitely-scrolling scroll view and a similar approach can be applied to collection view to achieve the same result. 
 
